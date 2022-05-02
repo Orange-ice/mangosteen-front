@@ -1,8 +1,6 @@
-import Bar from '../views/Bar';
-import Foo from '../views/Foo';
+import Welcome from '../views/welcome';
 
 export const routes = [
-  { path: '/', component: Foo },
-  { path: '/about', component: Bar },
+  {path: '/welcome', exact: true, component: Welcome,}
 ];
 
