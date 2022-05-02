@@ -5,7 +5,7 @@ import './stylesheets/App.scss';
 const App = defineComponent({
   setup() {
     return () => (
-      <div>
+      <div style={{height: '100vh'}}>
         <RouterView />
       </div>
     );
