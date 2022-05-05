@@ -18,12 +18,15 @@ const Welcome = defineComponent({
     setup() {
       const refStep = ref(0);
       const router = useRouter();
+      const jumpStart = () => {
+        router.push('/start');
+      }
       const nextStep = () => {
         if(refStep.value < 3 ) {
           refStep.value += 1;
           return;
         }
-        router.push('/');
+        jumpStart();
       }
         return () => (
             <div class={s.wrapper}>
@@ -45,8 +48,8 @@ const Welcome = defineComponent({
                 <footer class={s.footer}>
                     {/* 假按钮，为了 css 布局占位 */}
                     <button class={s.fake}>跳过</button>
-                    <button onClick={nextStep}>下一页</button>
-                    <button>跳过</button>
+                    <button onClick={nextStep}>{refStep.value === 3 ? '开启应用': '下一页'}</button>
+                    <button class={refStep.value === 3 ? s.fake: ''} onClick={jumpStart}>跳过</button>
                 </footer>
             </div>
         );
