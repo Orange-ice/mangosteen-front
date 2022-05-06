@@ -1,6 +1,7 @@
-import { defineComponent, ref } from 'vue';
-import { useRouter } from 'vue-router';
+import {defineComponent, ref, watchEffect} from 'vue';
+import {useRouter} from 'vue-router';
 import s from './welcome.module.scss';
+import useSwipe from '../../hooks/useSwipe';
 
 const contentList = [
   {text: '会挣钱\n还要会省钱', icon: 'pig'},
@@ -12,7 +13,21 @@ const contentList = [
 const Welcome = defineComponent({
   setup() {
     const refStep = ref(0);
+    const refMain = ref<HTMLElement | null>(null);
     const router = useRouter();
+    const {refDirection, refSwiping, refDistance} = useSwipe(refMain);
+
+    watchEffect(() => {
+      console.log(refSwiping.value, refDirection.value);
+      if (!refSwiping.value) {
+        if (refDirection.value === 'left' && refStep.value < 3) {
+          refStep.value += 1;
+        } else if (refDirection.value === 'right' && refStep.value > 0) {
+          refStep.value -= 1;
+        }
+      }
+    });
+
     const jumpStart = () => {
       router.push('/start');
     };
@@ -31,7 +46,7 @@ const Welcome = defineComponent({
           </svg>
           <h2>山竹记账</h2>
         </header>
-        <main class={s.main} style={{transform: `translateX(-${refStep.value}00%)`}}>
+        <main class={s.main} style={{transform: `translateX(-${refStep.value}00%)`}} ref={refMain}>
 
           {contentList.map(item => (
             <div key={item.icon} class={s.content}>
