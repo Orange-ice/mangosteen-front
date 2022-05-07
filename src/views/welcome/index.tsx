@@ -13,12 +13,13 @@ const contentList = [
 const Welcome = defineComponent({
   setup() {
     const refStep = ref(0);
-    const refMain = ref<HTMLElement | null>(null);
+    const refMain = ref<HTMLElement>();
     const router = useRouter();
-    const {refDirection, refSwiping, refDistance} = useSwipe(refMain);
+    const {refDirection, refSwiping} = useSwipe(refMain, {
+      beforeStart: (e) => e.preventDefault()
+    });
 
     watchEffect(() => {
-      console.log(refSwiping.value, refDirection.value);
       if (!refSwiping.value) {
         if (refDirection.value === 'left' && refStep.value < 3) {
           refStep.value += 1;
