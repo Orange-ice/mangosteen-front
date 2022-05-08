@@ -2,6 +2,7 @@ import {defineComponent, ref, watchEffect} from 'vue';
 import {useRouter} from 'vue-router';
 import s from './welcome.module.scss';
 import useSwipe from '../../hooks/useSwipe';
+import throttle from '../../shared/throttle';
 
 const contentList = [
   {text: '会挣钱\n还要会省钱', icon: 'pig'},
@@ -19,12 +20,16 @@ const Welcome = defineComponent({
       beforeStart: (e) => e.preventDefault()
     });
 
+    const handleSwipe = throttle((step: -1 | 1) => {
+      refStep.value += step;
+    }, 500);
+
     watchEffect(() => {
-      if (!refSwiping.value) {
+      if (refSwiping.value) {
         if (refDirection.value === 'left' && refStep.value < 3) {
-          refStep.value += 1;
+          handleSwipe(1);
         } else if (refDirection.value === 'right' && refStep.value > 0) {
-          refStep.value -= 1;
+          handleSwipe(-1);
         }
       }
     });
