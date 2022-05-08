@@ -1,16 +1,10 @@
-$button-bg: #5C33BE;
-$button-text: #ffffff;
-$button-font-size: 18px;
-$button-height: 48px;
-$button-radius: 8px;
-
 .button{
   padding: 8px 16px;
-  background: $button-bg;
-  color: $button-text;
-  font-size: $button-font-size;
-  height: $button-height;
-  border: solid 1px $button-bg;
+  background: var(--button-bg);
+  color: var(--button-text);
+  font-size: var(--button-font-size);
+  height: var(--button-height);
+  border: solid 1px var(--button-bg);
   border-radius: 8px;
   text-align: center;
 }
