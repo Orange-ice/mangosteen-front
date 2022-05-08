@@ -4,6 +4,7 @@ import Button from '../../components/button';
 import FloatButton from '../../components/float_button';
 import Center from '../../components/center';
 import Icon from '../../components/icon';
+import Navbar from '../../components/navbar';
 
 const Start = defineComponent({
   setup() {
@@ -13,7 +14,12 @@ const Start = defineComponent({
 
     return () => (
       <div class={s.start}>
-        <nav>menu</nav>
+        <Navbar>
+          {{
+            default: '山竹记账',
+            icon: <Icon name="menu" class={s.nav_icon} />,
+          }}
+        </Navbar>
         <Center class={s.pig_wrapper}>
           <Icon name="pig" class={s.pig} />
         </Center>

@@ -1,0 +1,21 @@
+.navbar{
+  background-image: linear-gradient(to bottom, var(--navbar-bg-start) 0%, var(--navbar-bg-end) 100%);
+  color: var(--navbar-text);
+  fill: var(--navbar-text);
+
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 36px 16px 12px;
+
+  font-size: 24px;
+  .title{
+    margin-left: 12px;
+  }
+
+  .icon{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
