@@ -16,8 +16,8 @@ const Start = defineComponent({
       <div class={s.start}>
         <Navbar>
           {{
-            default: '山竹记账',
-            icon: <Icon name="menu" class={s.nav_icon} />,
+            default: () => '山竹记账',
+            icon: () =>  <Icon name="menu" class={s.nav_icon} />,
           }}
         </Navbar>
         <Center class={s.pig_wrapper}>
