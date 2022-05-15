@@ -1,4 +1,5 @@
 import {defineComponent, ref} from 'vue';
+import {RouterLink} from 'vue-router';
 import s from './start.module.scss'
 import Button from '../../components/button';
 import FloatButton from '../../components/float_button';
@@ -30,9 +31,13 @@ const Start = defineComponent({
           <Icon name="pig" class={s.pig} />
         </Center>
         <div class={s.button_wrapper}>
-          <Button class={s.button}>开始记账</Button>
+          <RouterLink to="/items/create">
+            <Button class={s.button}>开始记账</Button>
+          </RouterLink>
         </div>
-        <FloatButton/>
+        <RouterLink to="/items/create">
+          <FloatButton/>
+        </RouterLink>
         <Overlay visible={refOverlayVisible.value} onClose={closeMenu}/>
       </div>
     )
