@@ -4,6 +4,7 @@ import Icon from '../../../components/icon';
 import {useRouter} from 'vue-router';
 import {Tabs, Tab} from '../../../components/tabs';
 import s from './item_create.module.scss';
+import InputPad from './input_pad';
 
 const ItemCreate = defineComponent({
   setup() {
@@ -23,6 +24,9 @@ const ItemCreate = defineComponent({
             <Tab name="支出">icon list 11</Tab>
             <Tab name="收入">icon list 22</Tab>
           </Tabs>
+          <div class={s.pad_wrapper}>
+            <InputPad/>
+          </div>
         </>,
       }}</MainLayout>
     );
