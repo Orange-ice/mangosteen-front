@@ -1,3 +1,14 @@
+.date_amount{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 8px 16px;
+  .amount{
+    color: red;
+  }
+}
+
+
 .button_wrapper {
   display: grid;
   grid-template-areas:
