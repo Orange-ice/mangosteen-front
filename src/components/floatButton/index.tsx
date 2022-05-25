@@ -1,5 +1,5 @@
 import {defineComponent} from 'vue';
-import s from './float_button.module.scss'
+import s from './floatButton.module.scss'
 import Icon from '../icon';
 
 const FloatButton = defineComponent({

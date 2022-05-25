@@ -3,8 +3,8 @@ import MainLayout from '../../../components/mainLayout';
 import Icon from '../../../components/icon';
 import {useRouter} from 'vue-router';
 import {Tabs, Tab} from '../../../components/tabs';
-import s from './item_create.module.scss';
-import InputPad from './input_pad';
+import s from './itemCreate.module.scss';
+import InputPad from './inputPad';
 
 const ItemCreate = defineComponent({
   setup() {

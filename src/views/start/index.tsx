@@ -2,7 +2,7 @@ import {defineComponent, ref} from 'vue';
 import {RouterLink} from 'vue-router';
 import s from './start.module.scss';
 import Button from '../../components/button';
-import FloatButton from '../../components/float_button';
+import FloatButton from '../../components/floatButton';
 import Center from '../../components/center';
 import Icon from '../../components/icon';
 import Overlay from '../../components/overlay';

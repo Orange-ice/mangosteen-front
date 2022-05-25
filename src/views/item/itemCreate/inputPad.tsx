@@ -1,5 +1,5 @@
 import {defineComponent, ref} from 'vue';
-import s from './input_pad.module.scss';
+import s from './inputPad.module.scss';
 
 const buttons = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '0', '.', '清空', '提交'];
 
