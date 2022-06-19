@@ -1,4 +1,4 @@
-import {computed, defineComponent, ref} from 'vue';
+import {computed, defineComponent, PropType, ref} from 'vue';
 import {emojiList} from './emojiList';
 import s from './emojiSelect.module.scss';
 
@@ -6,6 +6,9 @@ const EmojiSelect = defineComponent({
   props: {
     modelValue: {
       type: String,
+    },
+    error: {
+      type: Boolean as PropType<boolean>,
     },
   },
   setup(props, context) {
@@ -50,7 +53,7 @@ const EmojiSelect = defineComponent({
 
     });
     return () => (
-      <div class={s.emojiList}>
+      <div class={[s.emojiList, props.error && s.error]}>
         <nav>
           {table.map((item, index) =>
             <span
