@@ -5,14 +5,17 @@
     align-items: center;
     text-align: center;
     color: var(--navbar-text);
-    >li{
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    > li {
       flex-grow: 1;
       flex-shrink: 0;
       background: var(--navbar-bg-end);
       padding: 12px 0;
-      &.selected{
+      &.selected {
         position: relative;
-        &::after{
+        &::after {
           content: '';
           position: absolute;
           display: block;

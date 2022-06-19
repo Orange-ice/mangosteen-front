@@ -1,6 +1,59 @@
-.pad_wrapper{
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  width: 100%;
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  height: calc(100vh - 79px); // 79px = navbar height
 }
+
+.tabs {
+  flex-grow: 1;
+  flex-shrink: 1;
+  overflow: auto;
+}
+
+.pad_wrapper {
+  flex-shrink: 0;
+  flex-grow: 0;
+}
+
+.tags_wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  padding-top: 16px;
+}
+
+.createTag {
+  fill: var(--main);
+}
+
+.tag {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  width: 20vw;
+  height: calc(20vw * 1.14);
+
+  .sign {
+    width: 12vw;
+    height: 12vw;
+    border: solid 1px var(--tab-bg);
+    background: var(--tab-bg);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .name {
+    font-size: 12px;
+    margin-top: 4px;
+  }
+
+  &.selected {
+    .sign {
+      border-color: var(--main);
+    }
+  }
+}
+
+
