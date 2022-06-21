@@ -1,6 +1,10 @@
-.form {padding: 16px;}
+.form {
+  padding: 16px;
+}
 
-.formRow {margin-top: 8px;}
+.formRow {
+  margin-top: 8px;
+}
 
 .formItem {
   min-height: var(--input-min-height);
@@ -41,4 +45,13 @@
 .tips {
   text-align: center;
   padding: 16px 0;
+}
+
+.actions {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 16px 16px 16px;
+  .remove {
+    width: calc(50% - 8px);
+  }
 }

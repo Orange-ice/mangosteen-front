@@ -1,9 +1,10 @@
 import {defineComponent} from 'vue';
+import TagForm from '../../../components/tagForm';
 
 const TagEdit = defineComponent({
   setup() {
     return () => (
-      <div>TagEdit</div>
+      <TagForm status="edit" initData={{name: '123', sign: ''}}/>
     )
   }
 })
