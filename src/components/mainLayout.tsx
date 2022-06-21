@@ -4,8 +4,8 @@ import Navbar from './navbar';
 const MainLayout = defineComponent({
   setup(props, context) {
     return () => (
-      <div>
-        <Navbar>{{
+      <div style={{position: 'relative'}}>
+        <Navbar style={{position: 'sticky', top: 0}}>{{
           default: () => context.slots.title?.(),
           icon: () => context.slots.icon?.(),
         }}</Navbar>
