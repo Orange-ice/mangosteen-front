@@ -5,7 +5,11 @@ const Tabs = defineComponent({
   props: {
     selected: {
       type: String as PropType<string>,
-    }
+    },
+    alignment: {
+      type: String as PropType<'left' | 'center'>,
+      default: 'center',
+    },
   },
   setup(props, context) {
     return () => {
@@ -20,7 +24,7 @@ const Tabs = defineComponent({
 
       return (
         <div class={s.tabs}>
-          <ol class={s.tabs_nav}>
+          <ol class={[s.tabs_nav, s[props.alignment]]}>
             {tabs.map(item => (
               <li
                 class={item.props?.name === props.selected ? s.selected : ''}

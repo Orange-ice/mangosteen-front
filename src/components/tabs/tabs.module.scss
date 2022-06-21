@@ -8,10 +8,21 @@
     position: sticky;
     top: 0;
     z-index: 1;
+    background: var(--navbar-bg-end);
+
+    // alignment 为 left 时
+    &.left {
+      justify-content: flex-start;
+      > li {
+        flex-grow: 0;
+        padding: 12px 16px;
+      }
+    }
+    // ---------
+
     > li {
       flex-grow: 1;
       flex-shrink: 0;
-      background: var(--navbar-bg-end);
       padding: 12px 0;
       &.selected {
         position: relative;
