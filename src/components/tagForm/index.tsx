@@ -34,7 +34,7 @@ const TagForm = defineComponent({
       console.log(toRaw(errors));
       e.preventDefault();
     };
-    
+
     onMounted(() => {
       formData.name = props.initData?.name || '';
       formData.sign = props.initData?.sign || '';
@@ -83,8 +83,8 @@ const TagForm = defineComponent({
 
           {props.status === 'edit' &&
             <div class={s.actions}>
-              <Button class={s.remove}>删除标签</Button>
-              <Button class={s.remove}>删除标签和记账</Button>
+              <Button class={s.remove} level="danger">删除标签</Button>
+              <Button class={s.remove} level="danger">删除标签和记账</Button>
             </div>
           }
         </>,

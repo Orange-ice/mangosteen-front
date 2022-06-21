@@ -7,4 +7,9 @@
   border: solid 1px var(--button-bg);
   border-radius: 8px;
   text-align: center;
+
+  &.danger {
+    background: var(--button-danger-bg);
+    border-color: var(--button-danger-bg);
+  }
 }
